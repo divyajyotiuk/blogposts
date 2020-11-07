@@ -4,11 +4,14 @@ The question is to split string in such a way that each element in the array has
 
 
 Example: 
+
 `input: "abc"`
+
 `output: ["ab", "c_"]`
 
 
 `input: "abcd"`
+
 `output: ["ab", "cd"]`
 
 
