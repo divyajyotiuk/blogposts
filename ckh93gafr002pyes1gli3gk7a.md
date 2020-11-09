@@ -1,7 +1,7 @@
 ## Safari CSS hack
 
 Browsers have their own way of interpreting code. There isn't any universal browser as such. Well, it depends on people's choice! 
-A good web developer should always check the responsiveness and compatibility of her code on various devices and whether the website is working as expected. While developing website, I came across Safari behaving differently.
+A good web developer should always check the responsiveness and compatibility of their code on various devices and whether the website is working as expected. While developing website, I came across Safari behaving differently.
 
 Well, on searching I did find that Safari does not support
 ```css
