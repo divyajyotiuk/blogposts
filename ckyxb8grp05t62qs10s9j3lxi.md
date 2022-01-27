@@ -1,10 +1,9 @@
 ## Binary Search
 
-### Code
-
 Given a **sorted** array, perform binary search.
 
 Time Complexity - **O(log n)**
+
 
 ```javascript
 function binarySearch(sarr=[], term, i, j){
