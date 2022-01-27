@@ -6,12 +6,12 @@ Time Complexity - **O(log n)**
 
 
 ```javascript
-function binarySearch(sarr=[], term, i, j){
+function binarySearch(sarr=[], target, start, end){
     if(!sarr.length) return -1;
-    let k = Math.floor((i+j)/2);
-    if(sarr[k] == term) return k;
-    if(term > sarr[k]) return binarySearch(sarr, term, k, j);
-    if(term < sarr[k]) return binarySearch(sarr, term, i, k);
+    let middle = Math.floor((start+end)/2);
+    if(sarr[middle] == target) return middle;
+    if(target > sarr[middle]) return binarySearch(sarr, target, middle, end);
+    if(target < sarr[middle]) return binarySearch(sarr, target, start, middle);
     return -1;
 }
 ```
