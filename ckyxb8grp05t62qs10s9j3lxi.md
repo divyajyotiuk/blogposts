@@ -29,11 +29,12 @@ function binarySearch(sarr=[], target){
  
     while(start <= end){
          let middle = Math.floor((start+end)/2);
-         if(sarr[middle] == target) return middle;
          if(target > sarr[middle]){ 
              start = middle;
          }else if(target < sarr[middle]){
              end = middle;
+         }else{
+             return middle;
          }
     }
    
