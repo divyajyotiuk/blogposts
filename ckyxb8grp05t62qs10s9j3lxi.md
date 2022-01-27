@@ -19,6 +19,7 @@ function binarySearch(sarr=[], target, start, end){
 ```
 
 **Without recursion**
+
 ```javascript
 function binarySearch(sarr=[], target){
     if(!sarr.length) return -1;
