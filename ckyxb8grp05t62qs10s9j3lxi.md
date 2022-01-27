@@ -42,6 +42,30 @@ function binarySearch(sarr=[], target){
 }
 ```
 
+**Order-agnostic binary search**
+
+When you don't know if the array is sorted in ascending order or descending order.
+
+```javascript
+function binarySearch(sarr=[], target, start, end){
+    if(!sarr.length) return -1;
+    let isAsc = sarr[start] < sarr[end]; // check
+    let middle = Math.floor((start+end)/2);
+    if(sarr[middle] == target) return middle;
+    if(isAsc){
+         if(target > sarr[middle]) return binarySearch(sarr, target, middle, end); // or middle + 1
+         if(target < sarr[middle]) return binarySearch(sarr, target, start, middle); // or middle - 1
+    }else{
+         // reverse the comparison
+         if(target < sarr[middle]) return binarySearch(sarr, target, middle, end); // or middle + 1
+         if(target > sarr[middle]) return binarySearch(sarr, target, start, middle); // or middle - 1
+    }
+
+    return -1;
+}
+```
+
+
 **Tips**
 
 To avoid integer overflow in some languages - 
