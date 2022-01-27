@@ -37,3 +37,12 @@ function binarySearch(sarr=[], target){
     return -1;
 }
 ```
+
+**Tips**
+
+To avoid integer overflow in some languages - 
+
+`middle` can be calculated as:
+```
+int middle = start + (end - start)/2;
+```
