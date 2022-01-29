@@ -12,8 +12,8 @@ function binarySearch(sarr=[], target, start, end){
     if(!sarr.length) return -1;
     let middle = Math.floor((start+end)/2);
     if(sarr[middle] == target) return middle;
-    if(target > sarr[middle]) return binarySearch(sarr, target, middle, end); // or middle + 1
-    if(target < sarr[middle]) return binarySearch(sarr, target, start, middle); // or middle - 1
+    if(target > sarr[middle]) return binarySearch(sarr, target, middle + 1, end);
+    if(target < sarr[middle]) return binarySearch(sarr, target, start, middle - 1);
     return -1;
 }
 ```
@@ -30,9 +30,9 @@ function binarySearch(sarr=[], target){
     while(start <= end){
          let middle = Math.floor((start+end)/2);
          if(target > sarr[middle]){ 
-             start = middle; // or middle + 1
+             start = middle + 1;
          }else if(target < sarr[middle]){
-             end = middle;  // or middle - 1
+             end = middle - 1;
          }else{
              return middle;
          }
@@ -53,12 +53,12 @@ function binarySearch(sarr=[], target, start, end){
     let middle = Math.floor((start+end)/2);
     if(sarr[middle] == target) return middle;
     if(isAsc){
-         if(target > sarr[middle]) return binarySearch(sarr, target, middle, end); // or middle + 1
-         if(target < sarr[middle]) return binarySearch(sarr, target, start, middle); // or middle - 1
+         if(target > sarr[middle]) return binarySearch(sarr, target, middle + 1, end);
+         if(target < sarr[middle]) return binarySearch(sarr, target, start, middle - 1);
     }else{
          // reverse the comparison
-         if(target < sarr[middle]) return binarySearch(sarr, target, middle, end); // or middle + 1
-         if(target > sarr[middle]) return binarySearch(sarr, target, start, middle); // or middle - 1
+         if(target < sarr[middle]) return binarySearch(sarr, target, middle + 1, end);
+         if(target > sarr[middle]) return binarySearch(sarr, target, start, middle - 1);
     }
 
     return -1;
