@@ -52,9 +52,9 @@ Time complexity - **O(n^2)** (worst and best case both)
 ```javascript
 function selectionSort(nums){
     let n = nums.length;
-    for(let i=0; i<n; i++){ // passes for selecting max/min element
+    for(let i=0; i<n; i++){
         let minIndex = i;
-        for(let j=i+1;j<n;j++){
+        for(let j=i+1;j<n;j++){ // passes for selecting max/min element
             if(nums[minIndex] > nums[j]){
                 minIndex = j;
             }
