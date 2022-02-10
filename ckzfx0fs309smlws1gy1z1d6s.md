@@ -1,4 +1,4 @@
-## Sorting
+## Sorting - Part 1
 
 ### Bubble sort
 
