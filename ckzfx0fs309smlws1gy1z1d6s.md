@@ -67,7 +67,35 @@ function selectionSort(nums){
 }
 ```
 
+### Insertion sort
 
+After every pass, left-hand side of the array is sorted i.e. at pass 2, array will be sorted till index 2. Stable algorithm, works well for partially sorted arrays. Takes part in the hybrid sorting algorithms(like quick sort, merge sort).
+
+Adaptive algorithm - steps get reduced, less no. of swaps than bubble sort
+
+Time complexity 
+
+- Worst case -  **O(n^2)** (array sorted in opposite)
+- Best case - **O(n)** (already sorted array)
+
+
+```javascript
+function insertionSort(nums){
+    let n = nums.length;
+    for(let i=1;i<n;i++){ // runs n-1 times
+        for(let j=i;j>0;j--){ // moves towards the left-hand side
+            if(nums[j]<nums[j-1]){
+                let temp = nums[j-1];
+                nums[j-1] = nums[j];
+                nums[j] = temp;
+            }else{
+                break; // left-hand side is already sorted 
+            }
+        }
+    }
+    return nums;
+}
+```
 
 
 
