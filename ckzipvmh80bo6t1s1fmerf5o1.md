@@ -8,7 +8,7 @@ The pattern of questions that are cues for using this algorithm is - when range 
 
 Time complexity - **O(n)**
 
-In worst case, makes (2n-1) comparisons
+Gives O(1) of space complexity. In worst case, makes (2n-1) comparisons
 
 ```javascript
 function cyclicSort(nums){
