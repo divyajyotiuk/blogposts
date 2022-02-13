@@ -1,6 +1,6 @@
 ## Recursion quick breakdown
 
-**Note**: Not the article for absolute beginners.
+Note: **Not** the article for absolute beginners.
 
 Some facts first - 
 
