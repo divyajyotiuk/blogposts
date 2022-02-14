@@ -28,7 +28,7 @@ Let's take a cooler example with even cooler visualisation
 
 ```javascript
 /* 
- * Recurrence relation -> Fib(n) = Fib(n-1) + Fib(n-2)
+ * Linear recurrence relation -> Fib(n) = Fib(n-1) + Fib(n-2)
  */
 function fibonacci(n){
     if(n<2){ // base condition - represented by answers we already have
