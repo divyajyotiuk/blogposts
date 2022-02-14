@@ -1,4 +1,4 @@
-## Recursion quick breakdown
+## Recursion - quick breakdown
 
 Note: **Not** the article for absolute beginners.
 
@@ -31,7 +31,7 @@ Let's take a cooler example with even cooler visualisation
  * Recurrence relation -> Fib(n) = Fib(n-1) + Fib(n-2)
  */
 function fibonacci(n){
-    if(n==1 || n==0){ // base condition - represented by answers we already have
+    if(n<2){ // base condition - represented by answers we already have
         return n;     // in this case we know Fib(0)=0 and Fib(1)=1
     }
     return fibonacci(n-1) + fibonacci(n-2); // add the previous two
@@ -57,13 +57,35 @@ Now, we come at a point where we need to return something from the function in o
 The point of return is the base condition. By observation we can see that we know `Fib(0) = 0` and `Fib(1) = 1` which are our given. So this will be our point of return to the base of the stack or to the top of the recursion tree (visualisation coming up).
 
 ```
-if(n==0 || n==1) return n;
+if(n<2) return n;
 ```
 
-Another one from google - 
-![zmshy.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1644775978859/3iR8oeyyI.png)
+Check the execution sequence given by the numbers on each node
 
-Add a plus sign in between the children in the tree and travel up when the function starts returning a value rather than calling a function. 
+
+![zmshy.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1644859654891/ItFl6zB8S.png)
+
+Travel up when the function starts returning a value rather than calling a function i.e when you reach leaf node. Here's a debugger output if you don't believe what you are seeing. You can add a `console.log` in the first line of the function and check for yourself.
+
+```
+// debugger output 
+fib( 5 ) // pass 1
+fib( 4 ) // pass 2
+fib( 3 ) // pass 3
+fib( 2 ) // pass 4
+fib( 1 ) // pass 5
+fib( 0 ) // pass 6
+fib( 1 ) // pass 7
+fib( 2 ) // pass 8
+fib( 1 ) // pass 9
+fib( 0 ) // pass 10
+fib( 3 ) // pass 11
+fib( 2 ) // pass 12
+fib( 1 ) // pass 13
+fib( 0 ) // pass 14
+fib( 1 ) // pass 15
+```
+
 
 That's it!
 
