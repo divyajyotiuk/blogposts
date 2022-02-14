@@ -8,6 +8,9 @@ Time Complexity - **O(log n)**
 **With recursion**
 
 ```javascript
+// recurrence relation -> binSearch(n) = O(1) + binSearch(n/2) 
+// O(1) -> for comparison
+// Divide & conquer recurrence
 function binarySearch(sarr=[], target, start, end){
     if(!sarr.length) return -1;
     let middle = Math.floor((start+end)/2);
