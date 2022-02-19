@@ -2,7 +2,7 @@
 
 ### Merge Sort
 
-Not an in-place algorithm.
+Not an in-place algorithm. Merge sort preferred for linked list as memory allocation is in a heap.
 
 Steps -
 
@@ -117,6 +117,99 @@ let n = arr.length;
 mergeSortInPlace(arr,0,n);
 console.log(arr);
 ```
+
+### Quick Sort
+
+About - Not a stable algorithm, In-place and preferred over merge sort
+
+**Pivot** - A pivot `p` is an element in array which after every pass contains elements < `p` to the left hand side of `p` and elements > `p` to the right hand side. 
+
+After every pass pivot is getting placed at the correct position.
+
+*How to put pivot at correct position? *
+<br>
+- Keep two pointers `s` and `e`
+- Check if `a[s] < p` and `a[e] > p`, if not swap(a[s],a[e]) and update the pointers.
+
+Recurrence relation for Quick Sort
+```
+T(N) = T(k) + T(N-k-1) + O(n) 
+/* 
+k elements to LHS of pivot 
+N-k-1 elements to RHS of pivot 
+O(n) time to place pivot at correct position
+NOTE: we are not including pivot in LHS or RHS
+*/
+```
+
+Time complexity
+
+- Worse Case Complexity - **O(n^2)** <br>
+When pivot is either largest or smallest element of the array. Reason - recursion size of array becomes (n-1) i.e k=0 in above recurrence relation making it a linear recurrence relation
+
+- Best Case Complexity - **O(n*logn)** <br>
+When pivot divides the array in two halves
+```
+T(N) = T(N/2) + T(N/2) + O(n)
+```
+
+Code
+
+```javascript
+let arr = [8,4,9,2,3,12,10];
+
+function quickSort(a,low,high){
+
+    if(low >= high){
+        return;
+    }
+
+    let m = low + parseInt((high - low)/2);
+    let pivot = a[m];
+
+    let s = low, e = high; // low,high are start and end of array resp
+                            // s & e are pointers 
+
+    while(s <= e){
+
+        while(a[s] < pivot){
+            s=s+1;
+        }
+
+        while(a[e] > pivot){
+            e=e-1;
+        }
+
+        // else condition where a[s] > pivot && a[e] < pivot
+        // swap
+        if(s<=e){
+            let temp = a[s];
+            a[s] = a[e];
+            a[e] = temp;
+    
+            s=s+1;
+            e=e-1;
+        }
+    }
+
+    quickSort(a,low,e);
+    quickSort(a,s,high);
+}
+
+let n = arr.length;
+quickSort(arr,0,n-1);
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
