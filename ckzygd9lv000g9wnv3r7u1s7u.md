@@ -1,14 +1,45 @@
 ## Subset/Subsequence Pattern
 
+### Subset
+
 Subset patterns deal with Permutation and Combinations.
 
 e.g.
 
 ```
-[1,2,3] -> [[1], [2], [3], [1,2], [2,3], [1,3], [1,2,3]]
+[1,2,3] -> [[],[1], [2], [3], [1,2], [2,3], [1,3], [1,2,3]]
 ```
 
 Wherever you see a question that tells you to take some elements and remove some elements, that is your subset pattern problem
+
+Iterative approach 
+
+```javascript
+function iterativeSubset(unprocessedArr=[]){
+    let processedArr = [];
+
+    // process 1st element
+    if(unprocessedArr.length > 0){
+        processedArr.push([]) // push empty
+        processedArr.push([unprocessedArr[0]]); // push single element
+    }
+
+    for(let i=1;i<unprocessedArr.length;i++){
+        let copyOfProcessed = [...processedArr];
+        for(let j=0;j<processedArr.length;j++){
+            copyOfProcessed[j] = copyOfProcessed[j].concat([unprocessedArr[i]]);
+        }
+        processedArr = processedArr.concat(copyOfProcessed);
+    }
+
+    return processedArr;
+}
+
+ans = iterativeSubset([1,2,3]);
+console.log(ans); // [[],[1], [2], [3], [1,2], [2,3], [1,3], [1,2,3]]
+```
+
+### Subsequence
 
 A **subsequence** of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters
 
