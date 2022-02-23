@@ -25,7 +25,7 @@ function iterativeSubset(unprocessedArr=[]){
 
     for(let i=0;i<unprocessedArr.length;i++){ // for every pass #subsets gets doubled
         let copyOfProcessed = [...processedArr];
-        for(let j=0;j<processedArr.length;j++){
+        for(let j=0;j<copyOfProcessed.length;j++){
             copyOfProcessed[j] = copyOfProcessed[j].concat([unprocessedArr[i]]);
         }
         processedArr = processedArr.concat(copyOfProcessed);
