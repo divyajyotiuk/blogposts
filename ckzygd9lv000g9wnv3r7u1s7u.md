@@ -6,8 +6,9 @@ Subset patterns deal with Permutation and Combinations.
 
 e.g.
 
-```
-[1,2,3] -> [[],[1], [2], [3], [1,2], [2,3], [1,3], [1,2,3]]
+```javascript
+"abc" -> [ "abc", "acb", "bac", "bca", "cab", "cba" ] //permutations
+[1,2,3] -> [ [],[1], [2], [3], [1,2], [2,3], [1,3], [1,2,3] ]
 ```
 
 Wherever you see a question that tells you to take some elements and remove some elements, that is your subset pattern problem
