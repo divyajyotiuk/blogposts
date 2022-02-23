@@ -18,13 +18,12 @@ Iterative approach
 function iterativeSubset(unprocessedArr=[]){
     let processedArr = [];
 
-    // process 1st element
+    // start with empty array
     if(unprocessedArr.length > 0){
-        processedArr.push([]) // push empty
-        processedArr.push([unprocessedArr[0]]); // push single element
+        processedArr.push([]) // push empty array
     }
 
-    for(let i=1;i<unprocessedArr.length;i++){
+    for(let i=0;i<unprocessedArr.length;i++){ // for every pass #subsets gets doubled
         let copyOfProcessed = [...processedArr];
         for(let j=0;j<processedArr.length;j++){
             copyOfProcessed[j] = copyOfProcessed[j].concat([unprocessedArr[i]]);
@@ -77,3 +76,14 @@ ans = subsequence("","abc");
 console.log(ans);
 
 ```
+
+### Complexity Analysis
+
+Time complexity - **O(n*2^n)** 
+<br>`n` -> number of elements
+<br>`2^n` -> no of subsets for n elements
+
+Space complexity - **O(n*2^n)** 
+<br>`n` -> space taken by the subset
+<br>`2^n` -> number of subsets
+
