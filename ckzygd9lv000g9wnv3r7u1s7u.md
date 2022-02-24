@@ -11,6 +11,34 @@ e.g.
 [1,2,3] -> [ [],[1], [2], [3], [1,2], [2,3], [1,3], [1,2,3] ]
 ```
 
+We can solve permutations with the help of subset pattern
+
+Time Complexity - **O(n!)**
+
+```javascript
+let arr = [];
+function permutations(processedStr='',unprocessedStr=''){
+
+    if(unprocessedStr.length == 0){ // string processed
+        arr.push(processedStr);
+        return;
+    }
+
+    // recursion calls increase with increase in processed string length
+    for(let i=0;i<=processedStr.length;i++){ 
+        // processedStr = "a" ; unprocessedStr = "bc"
+        // newString = ""(0,0) + "b" + "a"(0,1)
+        // newString = "a"(0,1) + "b" + ""(1,1)
+        let newString = processedStr.slice(0,i) + unprocessedStr[0] + processedStr.slice(i,processedStr.length);
+        permutations(newString, unprocessedStr.substring(1));
+    }
+
+}
+
+permutations("","abc");
+console.log(arr); // [ "abc", "acb", "bac", "bca", "cab", "cba" ]
+```
+
 Wherever you see a question that tells you to take some elements and remove some elements, that is your subset pattern problem
 
 Iterative approach 
