@@ -2,7 +2,7 @@
 
 This is a mechanism to secure your web application from running on a different host. Running your application on a different host may lead to security issues like leaking of user information, requesting servers other than your server, and a lot more which is not in the scope of this article. Concisely speaking, this is to prevent website spoofing.
 
-You can directly jump down to [Secure your Nextjs App](#secure-your-nextjs-app) section to see the code.
+You can directly jump down to [Secure your Nextjs App](#heading-secure-your-nextjs-app) section to see the code.
 
 Let's try to simulate this scenario.
 
