@@ -52,6 +52,8 @@ Now, let’s write a way to prevent this in our Nextjs App. We will write a code
 In your _app.js file,
 
 ```
+import App from 'next/app'
+
 MyApp.getInitialProps = async ( appContext ) => {
   const appProps = await App.getInitialProps(appContext);
   const req = appContext.ctx.req;
@@ -73,7 +75,7 @@ MyApp.getInitialProps = async ( appContext ) => {
 
     if ( res && isInvalidHost ) {
       res.writeHead(301, {
-        Location: `https://your-application-domain`
+        Location: 'https://your-application-domain'
       });
       res.end();
     }
