@@ -1,4 +1,4 @@
-## Redirect other domain requests to your Nextjs App
+## Prevent Website Spoofing in Next.js App
 
 This is a mechanism to secure your web application from running on a different host. Running your application on a different host may lead to security issues like leaking of user information, requesting servers other than your server, and a lot more which is not in the scope of this article. Concisely speaking, this is to prevent website spoofing.
 
@@ -86,4 +86,6 @@ MyApp.getInitialProps = async ( appContext ) => {
 
 ```
 So, if another domain tries to request our application, we redirect the user with 301(permanent redirect - good for SEO).
+
+Originally wriiten here - https://plgworks.com/blog/prevent-website-spoofing-in-next-js-app/
 
